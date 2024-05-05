@@ -1,6 +1,6 @@
 import React from 'react'
 
-function JobCard({name}) {
+function JobCard({name, jdLink, minExp, about, maxJdSalary, minJdSalary, location, role, logo, jobDetailsFromCompany}) {
   return (
     <div>{name}</div>
   )
