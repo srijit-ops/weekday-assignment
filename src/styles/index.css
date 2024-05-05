@@ -23,3 +23,21 @@
   width: 22%;
   margin-bottom: 1rem;
 }
+
+@media (max-width:1350px){
+  .cardHolder{
+    width: 30%;
+  }
+}
+
+@media (max-width:950px){
+  .cardHolder{
+    width: 45%;
+  }
+}
+
+@media (max-width:600px){
+  .cardHolder{
+    width: 100%;
+  }
+}

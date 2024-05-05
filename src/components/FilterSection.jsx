@@ -24,20 +24,21 @@ const FilterSection = ({ setFilters }) => {
   }, [companyName, location, roles, minBasePay, locationType, minExperience, setFilters]);
 
   return (
-    <div>
+    <div style={{display:"flex", justifyContent:"space-between", alignItems:"center", flexWrap:"wrap", gap:"0.1rem"}}>
       
-      <h2>Remote/onsite:</h2>
       <Select
+      placeholder={"Remote/ onsite"}
         options={[
           { value: 'remote', label: 'Remote' },
           { value: 'onsite', label: 'Onsite' },
         ]}
         value={locationType}
         onChange={setLocationType}
+        styles={{marginBottom:"0.4rem", marginTop:"0.5rem"}}
       />
 
-      <h2>Min Experience:</h2>
       <Select
+      placeholder={"Select min experience"}
         options={[
           { value: 1, label: '1' },
           { value: 2, label: '2' },
@@ -45,10 +46,11 @@ const FilterSection = ({ setFilters }) => {
         ]}
         value={minExperience}
         onChange={setMinExperience}
+        styles={{marginBottom:"0.4rem", marginTop:"0.5rem"}}
       />
-      <h2>Roles:</h2>
       <Select
         // isMulti
+        placeholder={"Select roles"}
         options={[
           { value: 'backend', label: 'Backend' },
           { value: 'frontend', label: 'Frontend' },
@@ -56,9 +58,10 @@ const FilterSection = ({ setFilters }) => {
         ]}
         value={roles}
         onChange={setRoles}
+        styles={{marginBottom:"0.4rem", marginTop:"0.5rem"}}
       />
-      <h2>Min base pay:</h2>
       <Select
+      placeholder={"Select Min base pay"}
         options={[
           { value: '1000000', label: '10L' },
           { value: '2000000', label: '20L' },
@@ -66,12 +69,12 @@ const FilterSection = ({ setFilters }) => {
         ]}
         value={minBasePay}
         onChange={setMinBasePay}
+        styles={{marginBottom:"0.4rem", marginTop:"0.5rem"}}
       />
-      <h2>Search by Company Name:</h2>
-      <input type="text" value={companyName} onChange={(e) => setCompanyName(e.target.value)} />
 
-      <h2>Search by Location:</h2>
-      <input type="text" value={location} onChange={(e) => setLocation(e.target.value)} />
+      <input type="text" value={companyName} onChange={(e) => setCompanyName(e.target.value)} placeholder='Search company' style={{padding:"0.4rem", marginBottom:"0.4rem", marginTop:"0.5rem"}}/>
+
+      <input type="text" value={location} onChange={(e) => setLocation(e.target.value)} placeholder='Search loaction' style={{padding:"0.4rem", marginBottom:"0.4rem", marginTop:"0.5rem"}}/>
 
     </div>
   );
