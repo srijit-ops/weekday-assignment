@@ -16,6 +16,7 @@ export const rootReducer = (state = initialState, action) => {
         loading: true
       };
     case FETCH_DATA_SUCCESS:
+      console.log(action.payload.jdList)
       return {
         ...state,
         loading: false,

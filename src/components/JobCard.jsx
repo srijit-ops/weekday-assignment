@@ -2,7 +2,7 @@ import React from 'react'
 
 function JobCard({name}) {
   return (
-    <div>hahahah{name}</div>
+    <div>{name}</div>
   )
 }
 
