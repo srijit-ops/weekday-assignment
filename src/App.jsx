@@ -123,13 +123,14 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className='container'>
       <FilterSection filters={filters} setFilters={setFilters}/>
-    
-        {filteredData.length>0?
+      <div className='cardsContainer'>
+      {filteredData.length>0?
         filteredData.map((item)=>{
           return(
             <div 
+            className='cardHolder'
             // key={`${item.jdUid}-${item.companyName}`}
             >
                             <JobCard name={item.companyName} logo={item.logoUrl} role={item.jobRole} location={item.location} minJdSalary={item.minJdSalary} maxJdSalary={item.maxJdSalary} about={item.jobDetailsFromCompany} minExp={item.minExp} jdLink={item.jdLink}/>
@@ -140,6 +141,8 @@ function App() {
         :
         <p>No data found!</p>
       }
+      </div>
+        
         {console.log(data, loading, error)}
       </div>
   )

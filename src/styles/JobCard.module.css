@@ -1,0 +1,17 @@
+.cardContainer{
+    padding: 0.5rem 1rem;
+    border: 1px solid gray;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 1px 4px 0px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.detailHolder{
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    gap: 0.7rem;
+    flex-direction: row;
+}
