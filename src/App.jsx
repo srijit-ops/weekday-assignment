@@ -133,7 +133,7 @@ function App() {
             className='cardHolder'
             // key={`${item.jdUid}-${item.companyName}`}
             >
-                            <JobCard name={item.companyName} logo={item.logoUrl} role={item.jobRole} location={item.location} minJdSalary={item.minJdSalary} maxJdSalary={item.maxJdSalary} about={item.jobDetailsFromCompany} minExp={item.minExp} jdLink={item.jdLink}/>
+                            <JobCard name={item.companyName} logo={item.logoUrl} role={item.jobRole} location={item.location} minJdSalary={item.minJdSalary} maxJdSalary={item.maxJdSalary} jobDetailsFromCompany={item.jobDetailsFromCompany} minExp={item.minExp} jdLink={item.jdLink}/>
             </div>
           )
          
