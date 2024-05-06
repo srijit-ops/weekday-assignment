@@ -23,3 +23,15 @@
     gap: 0.7rem;
     flex-direction: row;
 }
+
+.mask{
+    height: 250px;
+    overflow: hidden;
+    mask-image: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255), rgba(255, 255, 255, 0));
+}
+
+.noMask{
+    height: auto;
+    overflow: hidden;
+    mask-image: none;
+}
