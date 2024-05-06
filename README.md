@@ -26,6 +26,6 @@ npm install
 Running the Application
 To run locally, use the following command:
 
-npm start
+npm run dev
 
 ###

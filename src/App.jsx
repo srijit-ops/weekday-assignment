@@ -47,25 +47,30 @@ function App() {
   }, [data, filters]);
 
   const applyFilters = (data, filters) => {
+    // Return original data if no filters applied
     if (filters.length === 0) {
-      return data; // Return original data if no filters applied
+      return data;
     }
+
     return data.filter((item) => {
       return filters.every((filter) => {
         const [filterType, filterValues] = Object.entries(filter)[0];
         const itemValue = item[filterType];
-        if (filterType === "locationType") {
-          if (filterValues === "remote") {
-            return item.location.toLowerCase().includes("remote");
-          } else if (filterValues === "onsite") {
-            return !item.location.toLowerCase().includes("remote");
-          }
-        } else if (filterType === "minJdSalary") {
-          return itemValue >= filterValues;
-        } else if (filterType === "minExp") {
-          return itemValue <= filterValues;
-        } else {
-          return itemValue.toLowerCase() === filterValues.toLowerCase();
+
+        switch (filterType) {
+          case "locationType":
+            if (filterValues === "remote") {
+              return item.location.toLowerCase().includes("remote");
+            } else if (filterValues === "onsite") {
+              return !item.location.toLowerCase().includes("remote");
+            }
+            break;
+          case "minJdSalary":
+            return itemValue >= filterValues;
+          case "minExp":
+            return itemValue <= filterValues;
+          default:
+            return itemValue.toLowerCase() === filterValues.toLowerCase();
         }
       });
     });
@@ -112,10 +117,7 @@ function App() {
         <div className="cardsContainer">
           {filteredData.map((item) => {
             return (
-              <div
-                className="cardHolder"
-
-              >
+              <div className="cardHolder">
                 <JobCard
                   name={item.companyName}
                   logo={item.logoUrl}
